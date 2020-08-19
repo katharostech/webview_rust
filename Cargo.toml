@@ -15,6 +15,9 @@ keywords = [ "web", "gui", "desktop", "webkit" ]
 categories = [ "gui", "api-bindings" ]
 edition = "2018"
 
+[features]
+chrome-backend = ["headless_chrome", "serde_json"]
+
 [lib]
 name = "webview_official"
 path = "src/lib.rs"
@@ -25,3 +28,5 @@ path = "examples/sample.rs"
 
 [dependencies]
 webview-official-sys = { path = "webview-official-sys", version = "0.1" }
+headless_chrome = { git = "https://github.com/katharostech/rust-headless-chrome.git", branch = "customizable-chrome-args", optional = true }
+serde_json = { version = "1.0.57", optional = true }
